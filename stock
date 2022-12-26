@@ -1,0 +1,22 @@
+def stocking(yes):
+    f = open(yes, "r")
+    text = f.readlines()
+    f.close()
+
+    new_list = list()
+    new_list.append(text[0])
+
+    text.pop(0)
+
+    for i in text:
+        i = i.split(" ")
+        if float(i[1]) < 600:
+           new_list.append(i)
+
+    f = open('new_stocks.txt', 'w')
+    for item in list1:
+        f.write("%s\n" % item)
+
+    return new_list
+
+print(stocking('stocks.txt'))
